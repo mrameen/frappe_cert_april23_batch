@@ -7,11 +7,15 @@ frappe.ui.form.on('Gym Member', {
 	// }
 	refresh: function(frm) {
 		frm.fields_dict['pick_locker'].grid.get_field('service_locker').get_query = function(){
-			return {
+			var data = {
 				filters:[
-					['Gym Locker','status','=','Availaible']
+					['Gym Locker','status','=','Availaible'],
+					['Gym Locker','name1','not in',getExisted(frm)]
 				]
-			}
+			};
+			// console.log('data')
+			// console.log(data);
+			return data
 		};
 	},
 
@@ -29,7 +33,20 @@ frappe.ui.form.on('Gym Member', {
 		
 	// }
 });
-
+function getExisted(frm2)
+{
+	console.log('getExisted()');
+	console.log(frm2);
+	var pick_locker = frm2.doc.pick_locker;
+	var arrcurrent_pick_locker = [];
+	for(var i=0;i<pick_locker.length;i++)
+	{
+		var tr = pick_locker[i].service_locker;
+		if (tr!=undefined) arrcurrent_pick_locker.push(tr);
+	}
+	console.log(arrcurrent_pick_locker)
+	return arrcurrent_pick_locker;
+}
 
 frappe.ui.form.on('Gym Locker Child',"name",function(frm,cdt,cdn){
 	let selectedRow = locals[cdt][cdn];

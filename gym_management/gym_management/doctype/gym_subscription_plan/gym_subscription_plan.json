@@ -17,8 +17,7 @@
   "plan_term",
   "route",
   "trainers_section",
-  "plan_user3",
-  "column_break_calyy"
+  "trainer_child_plan"
  ],
  "fields": [
   {
@@ -66,11 +65,7 @@
    "label": "Trainers"
   },
   {
-   "fieldname": "column_break_calyy",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "plan_user3",
+   "fieldname": "trainer_child_plan",
    "fieldtype": "Table",
    "options": "Gym Trainer Child Plan"
   }
@@ -78,7 +73,7 @@
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 14:07:15.771770",
+ "modified": "2023-05-01 14:53:49.321673",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Subscription Plan",

@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-29 14:24:16.889629",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "training",
+  "name1",
+  "plan"
+ ],
+ "fields": [
+  {
+   "fieldname": "training",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Training",
+   "options": "Gym Membership"
+  },
+  {
+   "fetch_from": "training.full_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fetch_from": "training.member_plan",
+   "fieldname": "plan",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plan"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-29 14:27:41.416570",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Trainer Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

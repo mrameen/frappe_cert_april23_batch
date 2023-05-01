@@ -199,3 +199,8 @@ app_license = "MIT"
 # auth_hooks = [
 #	"gym_management.auth.validate"
 # ]
+
+
+fixtures = [
+    "Custom Field"
+]

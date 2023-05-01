@@ -1,0 +1,89 @@
+
+<html>
+<head>
+	<title>
+		<p>Hello</p>
+	</title>
+</head>
+<div class="card-container">
+	<div class="card">
+	  <div class="card-header">
+		<h2>{{ doc.name }}</h2>
+	  </div>
+	  <div class="card-body">
+		<ul>
+		  <li>Access to Gym</li>
+		  <li>Personal Trainer</li>
+		  <li>Free Nutrition Plan</li>
+		</ul>
+	  </div>
+	  <div class="card-footer">
+		<a href="{{ doc.route }}">
+		  <button>Choose Plan</button>
+		</a>
+	  </div>
+	</div>
+  </div>  
+
+ <style>
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+.card-header {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body li {
+  padding: 5px 0;
+}
+
+.card-footer {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-footer button {
+  background-color: #2196F3;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card-footer button:hover {
+  background-color: #0D47A1;
+}
+</style>
+
+</html>

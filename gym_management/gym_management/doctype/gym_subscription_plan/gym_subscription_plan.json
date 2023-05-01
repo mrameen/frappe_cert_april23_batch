@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2023-04-28 10:08:21.585169",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "plan_duration",
+  "plan_price",
+  "plan_description",
+  "plan_service",
+  "plan_term",
+  "route",
+  "trainers_section",
+  "plan_user3",
+  "column_break_calyy"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_duration",
+   "fieldtype": "Select",
+   "label": "Duration",
+   "options": "1 Month\n2 Months\n3 Months\n5 Months\n1 Year\n2 Year"
+  },
+  {
+   "fieldname": "plan_price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "plan_service",
+   "fieldtype": "Text Editor",
+   "label": "Services Included"
+  },
+  {
+   "fieldname": "plan_term",
+   "fieldtype": "Text Editor",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "plan_description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plan Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "trainers_section",
+   "fieldtype": "Section Break",
+   "label": "Trainers"
+  },
+  {
+   "fieldname": "column_break_calyy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "plan_user3",
+   "fieldtype": "Table",
+   "options": "Gym Trainer Child Plan"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-01 14:07:15.771770",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Subscription Plan",
+ "name_case": "Title Case",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "plan",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

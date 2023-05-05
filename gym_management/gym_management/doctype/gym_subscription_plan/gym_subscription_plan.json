@@ -2,7 +2,7 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "prompt",
+ "autoname": "field:plan_name",
  "creation": "2023-04-28 10:08:21.585169",
  "default_view": "List",
  "doctype": "DocType",
@@ -17,14 +17,15 @@
   "plan_term",
   "route",
   "trainers_section",
-  "trainer_child_plan"
+  "trainer_user",
+  "count_subscription"
  ],
  "fields": [
   {
    "fieldname": "plan_duration",
    "fieldtype": "Select",
    "label": "Duration",
-   "options": "1 Month\n2 Months\n3 Months\n5 Months\n1 Year\n2 Year"
+   "options": "1 Month\n3 Month\n6 Month\n12 Month"
   },
   {
    "fieldname": "plan_price",
@@ -48,9 +49,10 @@
   },
   {
    "fieldname": "plan_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Plan Name",
+   "options": "Item",
    "reqd": 1,
    "unique": 1
   },
@@ -65,20 +67,26 @@
    "label": "Trainers"
   },
   {
-   "fieldname": "trainer_child_plan",
-   "fieldtype": "Table",
-   "options": "Gym Trainer Child Plan"
+   "fieldname": "trainer_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "count_subscription",
+   "fieldtype": "Int",
+   "label": "Count Subscription"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 14:53:49.321673",
+ "modified": "2023-05-05 12:30:53.838817",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Subscription Plan",
  "name_case": "Title Case",
- "naming_rule": "Set by user",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

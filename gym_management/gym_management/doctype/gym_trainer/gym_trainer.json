@@ -10,6 +10,7 @@
  "field_order": [
   "user_trainer",
   "full_name",
+  "membership_subsribed_plan_section",
   "gym_training"
  ],
  "fields": [
@@ -32,14 +33,17 @@
   {
    "fieldname": "gym_training",
    "fieldtype": "Table",
-   "label": "Gym Training",
-   "options": "Gym Trainer Child",
-   "read_only": 1
+   "options": "Gym Trainer Child"
+  },
+  {
+   "fieldname": "membership_subsribed_plan_section",
+   "fieldtype": "Section Break",
+   "label": "Membership Subsribed Plan"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 00:23:40.815523",
+ "modified": "2023-05-04 18:23:06.394415",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer",
@@ -55,6 +59,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
    "share": 1,
    "write": 1
   }

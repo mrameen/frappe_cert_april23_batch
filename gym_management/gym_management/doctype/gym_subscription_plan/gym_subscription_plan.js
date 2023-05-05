@@ -4,13 +4,21 @@
 frappe.ui.form.on('Gym Subscription Plan', {
 	
 	refresh: function(frm) {
-		frm.fields_dict['trainer_child_plan'].grid.get_field('trainers').get_query = function(){
+		// this for table, not used anymore
+		// frm.fields_dict['trainer_child_plan'].grid.get_field('trainers').get_query = function(){
+		// 	return {
+		// 		filters:[
+		// 			['Gym Trainer','user_trainer','not in',getUserExist(frm)]
+		// 		]
+		// 	}
+		// };
+		cur_frm.fields_dict['plan_name'].get_query = function(doc) {
 			return {
-				filters:[
-					['Gym Trainer','user_trainer','not in',getUserExist(frm)]
-				]
+				filters: {
+					"plan_type": 'Standard'
+				}
 			}
-		};
+		}
 	},
 });
 
@@ -29,21 +37,21 @@ function getUserExist(frm2){
 	// console.log(arrcurrent_trainer_child_plan);
 	// var arr = [];
 	// // NO NEED CALL BACKEND
-	// frappe.call({
-	// 	method:'gym_management.services.rest.getMemberExist',
-	// 	args: {
-	// 		'typeuser': 'trainer',
-	// 		'id': frm2.doc.name,
-	// 	},
-	// 	async: false,
-	// 	callback: function(r) {
-	// 		//
-	// 		arr = r.message.arr;
-	// 		// console.log('arr atas');
-	// 		// console.log(arr);
-	// 		// return arr;
-	// 	}
-	// });
+	frappe.call({
+		method:'gym_management.services.rest.getMemberExist',
+		args: {
+			'typeuser': 'trainer',
+			'id': frm2.doc.name,
+		},
+		async: false,
+		callback: function(r) {
+			//
+			arr = r.message.arr;
+			// console.log('arr atas');
+			// console.log(arr);
+			// return arr;
+		}
+	});
 	// // console.log('arr bawah');
 	// // console.log(arr);
 	// arr.push(arrcurrent_trainer_child_plan);

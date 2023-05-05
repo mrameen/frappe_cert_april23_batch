@@ -7,15 +7,18 @@
  "field_order": [
   "training",
   "name1",
-  "plan"
+  "plan",
+  "plan_pro",
+  "rating"
  ],
  "fields": [
   {
    "fieldname": "training",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Training",
-   "options": "Gym Membership"
+   "label": "Membership",
+   "options": "Gym Membership",
+   "read_only": 1
   },
   {
    "fetch_from": "training.full_name",
@@ -29,13 +32,29 @@
    "fieldname": "plan",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Plan"
+   "label": "Standard plan",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating"
+  },
+  {
+   "fetch_from": "training.pro_plan",
+   "fieldname": "plan_pro",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Professional plan",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-29 14:27:41.416570",
+ "modified": "2023-05-05 12:46:32.746547",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer Child",

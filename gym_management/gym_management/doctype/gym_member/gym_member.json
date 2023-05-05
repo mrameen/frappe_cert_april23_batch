@@ -44,8 +44,7 @@
    "fieldname": "user",
    "fieldtype": "Link",
    "label": "User",
-   "options": "User",
-   "read_only": 1
+   "options": "User"
   },
   {
    "fieldname": "section_break_pr4wn",
@@ -76,7 +75,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-01 14:50:26.225400",
+ "modified": "2023-05-05 11:35:50.875210",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Member",

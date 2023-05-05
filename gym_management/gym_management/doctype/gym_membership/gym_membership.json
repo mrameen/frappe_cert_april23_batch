@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "autoname": "field:user_membership",
  "creation": "2023-04-27 21:53:57.378358",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,16 +9,27 @@
  "field_order": [
   "user_membership",
   "full_name",
-  "member_plan",
+  "status",
+  "height",
+  "weight",
+  "column_break_q4qvj",
   "start_plan",
   "end_plan",
-  "status_plan"
+  "plan_subscription_section",
+  "member_plan",
+  "column_break_x995b",
+  "pro_plan",
+  "section_break_82xj3",
+  "subscription_no",
+  "locker_section",
+  "pick_locker_membership"
  ],
  "fields": [
   {
    "fieldname": "member_plan",
    "fieldtype": "Link",
-   "label": "Subscription plan",
+   "in_list_view": 1,
+   "label": "Standard plan",
    "options": "Gym Subscription Plan"
   },
   {
@@ -34,35 +45,93 @@
    "label": "End date"
   },
   {
-   "default": "Active",
-   "fieldname": "status_plan",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Active\nInactive"
-  },
-  {
    "fieldname": "user_membership",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Choose member",
    "options": "Gym Member",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fetch_from": "user_membership.full_name",
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full name",
-   "read_only": 1
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_q4qvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_82xj3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "subscription_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subscription No",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "locker_section",
+   "fieldtype": "Section Break",
+   "label": "Locker"
+  },
+  {
+   "fieldname": "pick_locker_membership",
+   "fieldtype": "Table",
+   "options": "Gym Locker Child"
+  },
+  {
+   "fieldname": "plan_subscription_section",
+   "fieldtype": "Section Break",
+   "label": "Plan Subscription"
+  },
+  {
+   "fieldname": "column_break_x995b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pro_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Professional plan",
+   "options": "Gym Professional Trainer Plan"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-30 23:38:15.783193",
+ "modified": "2023-05-05 14:46:24.543860",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Membership",
- "naming_rule": "Autoincrement",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -76,6 +145,16 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1
   }
  ],
  "sort_field": "modified",

@@ -123,13 +123,23 @@ body {
     // bind click event to subscribe button
     $(document).on('click', '#subscribe-btn', function() {
       var plan_name = $(this).attr('data-plan-name');
-      console.log('Subscribing to ' + plan_name);
+      var trainer_user = '{{ trainer_user }}';
+      var plan_price = '{{ plan_price }}';
+      var plan_duration = '{{ plan_duration }}';
+      var count_subscription = '{{ count_subscription }}';
+      console.log('Subscribing to ' + plan_name+' trainer_user:'+trainer_user+' plan_price:'+plan_price);
+      // return
       
       // create new Gym Membership document
       frappe.call({
-        method: "gym_management.gym_management.doctype.gym_subscription_plan.gym_subscription_plan.create_gym_membership",
+        method: "gym_management.services.rest.create_gym_membership",
         args: {
-          plan_name: plan_name
+          plan_name: plan_name,
+          trainer_user: trainer_user,
+          plan_price:plan_price,
+          plan_duration:plan_duration,
+          plan_type:'standard',
+          count_subscription: count_subscription,
         },
         callback: function(response) {
           if (response.message == 'success') {
@@ -137,6 +147,9 @@ body {
               message: 'You have subscribed to ' + plan_name,
               indicator: 'green'
             });
+            setTimeout(function(){
+              window.location.href = '/thankyou';
+            },1500)
           } else {
             frappe.show_alert({
               message: 'Subscription failed. Please try again later.',

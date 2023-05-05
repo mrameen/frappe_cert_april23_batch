@@ -21,6 +21,8 @@
   "pro_plan",
   "section_break_82xj3",
   "subscription_no",
+  "column_break_z9co3",
+  "remaining_days_left",
   "locker_section",
   "pick_locker_membership"
  ],
@@ -99,7 +101,7 @@
   {
    "fieldname": "plan_subscription_section",
    "fieldtype": "Section Break",
-   "label": "Plan Subscription"
+   "label": "Plan subscription"
   },
   {
    "fieldname": "column_break_x995b",
@@ -109,8 +111,6 @@
    "fieldname": "pro_plan",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "Professional plan",
    "options": "Gym Professional Trainer Plan"
   },
@@ -123,11 +123,21 @@
    "fieldname": "weight",
    "fieldtype": "Float",
    "label": "Weight"
+  },
+  {
+   "fieldname": "remaining_days_left",
+   "fieldtype": "Int",
+   "label": "Remaining days left",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_z9co3",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-05 14:46:24.543860",
+ "modified": "2023-05-05 22:25:30.037801",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Membership",

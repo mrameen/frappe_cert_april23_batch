@@ -202,5 +202,6 @@ app_license = "MIT"
 
 
 fixtures = [
-    "Custom Field"
+    "Custom Field",
+    "Gym Fitness Profile"
 ]

@@ -17,6 +17,14 @@ frappe.ui.form.on('Gym Membership', {
 			// console.log(data);
 			return data
 		};
+
+
+        frm.set_value(
+            "remaining_days_left",
+            frappe.datetime.get_day_diff(frm.doc.end_plan,frm.doc.start_plan)
+        );
+		cur_frm.save();
+
 	},
 	// after_save: function(frm) {
 	// 	frappe.call({

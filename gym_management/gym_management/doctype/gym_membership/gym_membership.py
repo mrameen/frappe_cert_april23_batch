@@ -4,10 +4,8 @@
 import frappe, random
 from frappe.model.document import Document
 from datetime import datetime
+
 class GymMembership(Document):
-	
-		
-        
 	def before_insert(self):
 		exists = frappe.db.exists(
             "Gym Trainer Child",

@@ -18,7 +18,16 @@ frappe.ui.form.on('Gym Subscription Plan', {
 					"plan_type": 'Standard'
 				}
 			}
-		}
+		};
+		
+		cur_frm.fields_dict['trainer_user'].get_query = function(doc) {
+			return {
+				filters: {
+					"type_trainer": 'Gym'
+				}
+			}
+		};
+		
 	},
 });
 

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2023-04-28 18:33:35.177129",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,17 +9,13 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "trainer_user",
   "description",
-  "price",
-  "price_type"
+  "fee",
+  "duration",
+  "capacity"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name"
-  },
   {
    "fieldname": "description",
    "fieldtype": "Text",
@@ -26,25 +23,41 @@
    "label": "Description"
   },
   {
-   "fieldname": "price",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Price"
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration"
   },
   {
-   "fieldname": "price_type",
-   "fieldtype": "Select",
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity"
+  },
+  {
+   "fieldname": "fee",
+   "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Price Type",
-   "options": "Daily\nWeekly\nMonthly\nYearly"
+   "label": "Fee"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Class",
+   "unique": 1
+  },
+  {
+   "fieldname": "trainer_user",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "Gym Trainer"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-28 18:47:03.321158",
+ "modified": "2023-05-05 22:46:11.699510",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Classes",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

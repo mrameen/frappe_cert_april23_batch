@@ -113,6 +113,7 @@ def create_gym_membership(plan_name,trainer_user,plan_price,plan_duration,plan_t
         jsonmembership.update(jplt)
         doc = frappe.get_doc(jsonmembership)
         doc.insert()
+        print('Done create NEW MEMBERSHIP')
     else:
         bolmemActv = checkMembershipActive(name)
         if bolmemActv == False:
